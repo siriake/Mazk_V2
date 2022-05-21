@@ -1,0 +1,27 @@
+
+
+
+
+.pol1{
+  color: rgb(132, 255, 0);
+}
+
+.story-container {
+  display: table;
+  width: 100%;
+    
+  height: 100%; 
+  vertical-align: middle;
+}
+
+.story_vid {
+  width:60%
+}
+
+.img_story_head{
+  width: 90%;
+}
+
+@media (max-width: 1000px){
+  
+} 

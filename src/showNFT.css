@@ -1,0 +1,15 @@
+.bg2 {
+    /* The image used */
+    background-image: url("bg02.jpg?s=5");
+  
+    /* Full height */
+    height: 100vh; 
+    min-width:100vw;
+    width: 100vw;
+  
+    /* Center and scale the image nicely */
+    background-position:center;
+    //background-repeat: no-repeat;
+    background-size:auto 100%;
+    background-color: #d2ef59;
+}

@@ -1,0 +1,49 @@
+.join-container{
+    background-color: rgb(106, 213, 70);
+    background-image: url("join_bg_1.jpg");
+    background-size: cover;
+    background-position: left;
+    color: #000;
+    display: table;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+}
+
+.join-div1{
+    display: table-cell;
+    width:calc(100vw - 1300px);
+
+}
+.join-div2{
+    display: table-cell;
+    width: 630px;
+    padding: 30px;
+}
+
+.join-div3{
+    display: table-cell;
+    width: calc(100vw - 500px);
+    background-image: url('STU_05.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+.join-head{
+    font-size: calc(30px + 1vw);
+    font-weight: bolder;
+    letter-spacing: -1px;
+}
+
+.join-button{
+    background-color: black;
+    padding: 20px;
+    color:white;
+    font-size: 22px;
+}
+
+.copyright{
+    font-size: 12px;
+    letter-spacing: 5px;
+    color:rgb(64, 74, 84);
+}

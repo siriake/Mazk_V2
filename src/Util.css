@@ -1,0 +1,39 @@
+.util_div {
+    display:grid;
+    /*background-color: rgb(240, 201, 255);*/
+    justify-content: center;
+    width: 100%;
+    font-size: 24px;
+}
+
+.util-container {
+    font-family: 'Space Grotesk', sans-serif;
+    /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+    font-weight: 500;
+    padding: 20px; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    
+}
+
+.util-cell {
+    color: rgb(69, 64, 96);
+    border-radius: 60px;
+    background-color: rgb(255, 255, 255);
+    padding: 35px; 
+    text-align: center;
+    text-justify: inter-word;
+    max-width: 400px;
+    justify-content: center;
+
+    letter-spacing: 0px;
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.circle-clip-1{
+    max-height: 250px;
+    width: auto;   
+}

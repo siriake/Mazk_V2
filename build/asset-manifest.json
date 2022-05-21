@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "./static/css/main.f752bd49.chunk.css",
+    "main.js": "./static/js/main.b58be15d.chunk.js",
+    "main.js.map": "./static/js/main.b58be15d.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.7d45ca65.js",
+    "runtime-main.js.map": "./static/js/runtime-main.7d45ca65.js.map",
+    "static/js/2.1b32c1fe.chunk.js": "./static/js/2.1b32c1fe.chunk.js",
+    "static/js/2.1b32c1fe.chunk.js.map": "./static/js/2.1b32c1fe.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.f752bd49.chunk.css.map": "./static/css/main.f752bd49.chunk.css.map",
+    "static/js/2.1b32c1fe.chunk.js.LICENSE.txt": "./static/js/2.1b32c1fe.chunk.js.LICENSE.txt",
+    "static/media/Mazk_FAQ.css": "./static/media/FAQ_background.0310ccd5.jpg",
+    "static/media/index.css": "./static/media/Krungthep.9545f0ce.ttf",
+    "static/media/Mazk_Banner1.css": "./static/media/bg1.a1d040ce.jpg",
+    "static/media/Header_2.css": "./static/media/bg_menu_mini.dcc313e0.png",
+    "static/media/left.899fb1db.svg": "./static/media/left.899fb1db.svg",
+    "static/media/Mazk_Master.css": "./static/media/mazter3_1.545e254b.jpg",
+    "static/media/menu2.e5f202b1.svg": "./static/media/menu2.e5f202b1.svg",
+    "static/media/right.21e6fb16.svg": "./static/media/right.21e6fb16.svg",
+    "static/media/x2.1933ab45.svg": "./static/media/x2.1933ab45.svg",
+    "static/media/x2.4856f3cc.svg": "./static/media/x2.4856f3cc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7d45ca65.js",
+    "static/js/2.1b32c1fe.chunk.js",
+    "static/css/main.f752bd49.chunk.css",
+    "static/js/main.b58be15d.chunk.js"
+  ]
+}
