@@ -91,6 +91,17 @@
   padding: 0px;
 }
 
+.checkWL_social_svg {
+  float: right;
+  height: min(4.5vw,65px);
+  margin-right: min(.5vw,20px);
+  padding: 4px;
+}
+.checkWL_social_svg :hover {
+  float: right;
+  padding: 10px;
+}
+
 .header_menu{
   top: 0px;
   width: 100%;
@@ -180,14 +191,19 @@
 }
 
 #bt1{
-  height: 10vh;
-  width: auto;
-  pointer-events: auto;
+  width: min(17vw,330px); 
+  /*height: 10vh;
+  pointer-events: auto; */
 }
 #bt1:hover{
-  height: 11vh;
-  transition: all .5s ;
+  content: url('checkbutton_hover.png');
+  /*transition: all .5s ;*/
 }
+#bt1:active{
+  content: url('checkbutton_press.png');
+  /*transition: all .5s ;*/
+}
+
 .connect_button1 {
   font-family: 'Cinzel Decorative', cursive;
   font-weight: 300;

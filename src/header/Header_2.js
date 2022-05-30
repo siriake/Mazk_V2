@@ -2,30 +2,20 @@
 import { ReactComponent as CloseMenu } from "../assets/x2.svg";
 import { ReactComponent as MenuIcon } from "../assets/menu2.svg";
 import "./Header_2.css";
-//import { ethers } from "ethers";
-//import axios from "axios";
-import Web3 from 'web3';
-//import Web3Modal from "web3modal";
-import { useState } from 'react';
+//import Web3 from 'web3';
+//import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 //const baseURL = "https://sv1.siri-art.com:5000/";
 //var isSignedIn = false;
 export default function Header() {
-    const [account, setAccount] = useState(0); // state variable to set account.
+    //const [account, setAccount] = useState(0); // state variable to set account.
 
     const signOut = async (e) => {
       document.getElementById('bt1').style.display = "inline";
       document.getElementById('bt2').style.display = "none";
       document.getElementById('ad1').innerHTML = "";
     }
-
-    function test111() {
-      if(!account){
-        checkMetaMask();
-      }else{
-        alert("Your wallet address is " + account);
-      }
-    } 
    
     function openMiniMenu(){
       document.getElementById('mini-open-menu').style.display = 'none';
@@ -56,48 +46,9 @@ export default function Header() {
       document.getElementById('APP_MASTER').style.filter = "blur(20px)";
     }
     
-    function checkMetaMask() {
-      if (typeof window.ethereum !== 'undefined') {
-        connectMetaMask()
-      }else{
-        window.location.href = 'https://metamask.app.link/dapp/www.mazkgang.io?connect=2';
-      }
-    }
 
-    async function clearAndcheckPassConnect(){
-      var url =  new URL(window.location.href);
-      var c = url.searchParams.get('connect');
-      if(c === 2) connectMetaMask();
-    }
-    clearAndcheckPassConnect();
+
     
-    async function connectMetaMask() {
-      const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
-      const accounts = await web3.eth.requestAccounts();
-      
-      setAccount(accounts[0]);
-      var ad_short = "  0" +  accounts[0].substring(1,6) + "..." + accounts[0].substring(accounts[0].length - 4) + "  ";
-      document.getElementById("wallet_address").style.display = 'block';
-      document.getElementById("wallet_address").innerHTML = ad_short;
-      document.getElementById("bt1").style.display = "none";
-      if(accounts[0]){
-        setTimeout(closeMiniMenu, 800);
-      }
-    }
-
-    /*const fs1 = async () => {
-        await axios.get(baseURL, config)
-            .then(async function(response) {
-                message1 = response.data;
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
-        return message1;
-    };
-
-    const CloseAndSign = async (e) =>{
-    }*/
 
     var scpos;
     var targetPos , deltaPos , startPos ;
@@ -160,8 +111,8 @@ export default function Header() {
         <div id='center_div_banner'>
           <center>
             <img  alt="" src="MAZK_LOGO.png" id="main_logo"  />
-            <br/>
-            <img id='bt1' src='Connect-Wallet.png' onClick={test111} alt="" /> 
+            <br/><br/><br/><br/>
+            <Link to="/checkwl"><img id='bt1' src='checkbutton.png'  alt="" /></Link>
             <button><img alt="" id='mazk_story_btn' src='mazk_story_btn_2.png' onClick={openStoryLine}/></button>
           </center>
         </div>

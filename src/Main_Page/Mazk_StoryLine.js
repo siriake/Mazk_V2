@@ -23,15 +23,29 @@ function gotoSTL(previousSTLPage,STLPage) {
     }
 }
 
+function storyline_resize() {
+    var w = document.getElementById('banner').offsetWidth;
+    if(w !== previousWidth){
+        document.getElementById('storyline_main_container').style.transition = 'none';
+        closeStoryLine();
+        previousWidth = w;
+    }
+}
+
+var previousWidth;
 class StoryLine extends Component {
     componentDidMount() {
-
+        
+        window.addEventListener('resize', storyline_resize);
         if(window.innerWidth < 1000) {
             document.getElementById('stl1').style.display = 'block' ;
         }else{
             document.getElementById('stl1').style.display = 'flex' ;
         }
-        //else document.getElementById('stl1').style.display = 'block';
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', storyline_resize);
     }
 
     render() {
@@ -203,12 +217,3 @@ class StoryLine extends Component {
     }
 }
 export default StoryLine;
-var previousWidth;
-window.addEventListener('resize', function(e) {
-    var w = document.getElementById('banner').offsetWidth;
-    if(w !== previousWidth){
-        document.getElementById('storyline_main_container').style.transition = 'none';
-        closeStoryLine();
-        previousWidth = w;
-    }
-});

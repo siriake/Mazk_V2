@@ -29,6 +29,7 @@ var scene = new THREE.Scene();
 var fov1 = 22;
 var topStory1 = 0;
 var myRFA;
+var loader;
 class Banner1 extends Component {
   adjustOnResize() {
       bw = document.getElementById("story_img1").offsetWidth;
@@ -87,7 +88,7 @@ class Banner1 extends Component {
               hdrCubeMap.magFilter = THREE.LinearFilter;
               hdrCubeMap.needsUpdate = true;
             } );
-    const loader = new GLTFLoader();
+    loader = new GLTFLoader();
     
     loader.load(fng1,(gltf) => {
       obj1 = gltf.scene;
@@ -175,15 +176,15 @@ class Banner1 extends Component {
   }
 
   componentWillUnmount() {
-     cancelAnimationFrame(myRFA);
-     window.removeEventListener('resize', this.onBannerResize , false );
+    scene.remove(obj1);
+    cancelAnimationFrame(myRFA);
+    window.removeEventListener('resize', this.onBannerResize , false );
   }
   
   render() {
     return (
       <div >
-        <div id='banner' ref={ref => (this.mount = ref)}>
-        </div>
+        <div id='banner' ref={ref => (this.mount = ref)}></div>
         <div id="storyDiv" className = "storyDiv" >
           <div className="storyDiv_left">
             <center>

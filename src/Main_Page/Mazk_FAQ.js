@@ -77,7 +77,7 @@ class FAQ extends Component {
                     </tr>
                     <tr>
                         <td className='FAQ_main_table_td_answer' id='aaa4'>
-                            Price will be 0.1 ETH for WL <br className="FAQ_br" />| Public Sale will be Dutch auction. <br className="FAQ_br" />Starting at 0.55 ETH and decreasing by 0.1 ETH <br className="FAQ_br" />every 20 minutes to 0.15 ETH.
+                            Pre-sale (WL) will be 0.08 ETH for WL <br className="FAQ_br" /> &nbsp;|&nbsp; Public Sale will be 0.15 ETH. 
                         </td>
                     </tr>
                     <tr>
@@ -87,7 +87,7 @@ class FAQ extends Component {
                     </tr>
                     <tr>
                         <td className='FAQ_main_table_td_answer' id='aaa5'>
-                            We have reserved around 60% <br className="FAQ_br" />of our community mint for WL. <br className="FAQ_br" />The rest will be for public sale, <br className="FAQ_br" />reward the team/mods and future marketing.
+                            We have reserved around 70% <br className="FAQ_br" />of our community mint for WL. <br className="FAQ_br" />The rest will be for public sale, <br className="FAQ_br" />reward the team/mods and future marketing.
                         </td>
                     </tr>
                     <tr>

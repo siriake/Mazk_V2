@@ -4,34 +4,13 @@ import React, { Component } from "react";
 class Master extends Component {
     componentDidMount() {
         window.addEventListener('resize',master_resize);
-        function master_resize(){
-            if(window.innerWidth  > 1000){
-                var ppop = document.getElementById('master_img2');
-                ppop.style.height = ppop.offsetWidth*96/80 + "px" ;
-                document.getElementById('mazter_right_subdiv2').style.width = ppop.offsetWidth + 'px';
-            }
-        }
         master_resize();
         
         window.addEventListener('scroll',master_bubble_popup);
-        function master_bubble_popup() {
-            var master_div_offsetTop = document.getElementById("master_essentialDiv").offsetTop - window.innerHeight/3;
-            if(window.scrollY > (master_div_offsetTop )){
-                if(window.scrollY > master_div_offsetTop + 150 ){
-                    document.getElementById("mazter_aui").style.transform = "scale(1)";
-                    document.getElementById("mazter_ply").style.transform = "scale(1)";
-                    document.getElementById("mazter_purika").style.transform = "scale(1)";
-                    
-                }else{
-                    document.getElementById("mazter_bubble_img").style.transform = "scale(1)";
-                }
-            }else{
-                document.getElementById("mazter_bubble_img").style.transform = "scale(0)";
-                document.getElementById("mazter_aui").style.transform = "scale(0)";
-                document.getElementById("mazter_ply").style.transform = "scale(0)";
-                document.getElementById("mazter_purika").style.transform = "scale(0)";
-            }
-        }
+    }
+    componentWillUnmount(){
+        window.removeEventListener('scroll',master_bubble_popup);
+        window.removeEventListener('resize',master_resize);
     }
     render(){
         return (
@@ -96,3 +75,29 @@ class Master extends Component {
     }
 }
 export default Master;
+
+function master_bubble_popup() {
+    var master_div_offsetTop = document.getElementById("master_essentialDiv").offsetTop - window.innerHeight/3;
+    if(window.scrollY > (master_div_offsetTop )){
+        if(window.scrollY > master_div_offsetTop + 150 ){
+            document.getElementById("mazter_aui").style.transform = "scale(1)";
+            document.getElementById("mazter_ply").style.transform = "scale(1)";
+            document.getElementById("mazter_purika").style.transform = "scale(1)";
+        }else{
+            document.getElementById("mazter_bubble_img").style.transform = "scale(1)";
+        }
+    }else{
+        document.getElementById("mazter_bubble_img").style.transform = "scale(0)";
+        document.getElementById("mazter_aui").style.transform = "scale(0)";
+        document.getElementById("mazter_ply").style.transform = "scale(0)";
+        document.getElementById("mazter_purika").style.transform = "scale(0)";
+    }
+}
+
+function master_resize(){
+    if(window.innerWidth  > 1000){
+        var ppop = document.getElementById('master_img2');
+        ppop.style.height = ppop.offsetWidth*96/80 + "px" ;
+        document.getElementById('mazter_right_subdiv2').style.width = ppop.offsetWidth + 'px';
+    }
+}
