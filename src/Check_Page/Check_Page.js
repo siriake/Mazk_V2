@@ -4,6 +4,7 @@ import "../header/Header_2.css";
 import { Link } from "react-router-dom";
 import Web3 from 'web3';
 import { useState , useEffect } from 'react';
+import { getProof } from "../merkle/merkleTree";
 //import FetchGoogleSheet from './Papaparse';
 
 var checkpage_subdiv1;
@@ -43,6 +44,7 @@ export default function Header() {
   function checkMetaMask() {
     if (typeof window.ethereum !== 'undefined') {
       connectMetaMask()
+      window.ethereum.on('accountsChanged', connectMetaMask)
     }else{
       window.location.href = 'https://metamask.app.link/dapp/www.mazkgang.io?connect=2';
     }
@@ -74,8 +76,14 @@ export default function Header() {
     document.getElementById("checkpage_subdiv1_2").style.display = 'none';
     document.getElementById("checkpage_subdiv1_3").style.display = 'flex';
     document.getElementById("wallet_blank").innerHTML = "<center>"+ad_short+"</center>";
-    showWLSuccess();
-    //showWLFail();
+
+    const proof = getProof(accounts[0]);
+
+    if (proof.length > 0) {
+      showWLSuccess();
+    } else {
+      showWLFail();
+    }
   }
 
   return (
