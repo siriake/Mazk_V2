@@ -1,4 +1,5 @@
 // log
+import { getProof } from "../../merkle/merkleTree";
 import store from "../store";
 
 const fetchDataRequest = () => {
@@ -21,7 +22,10 @@ const fetchDataFailed = (payload) => {
   };
 };
 
-export const fetchData = () => {
+const PRESALE_PRICE = 0.08;
+const PUBLIC_PRICE = 0.15;
+
+export const fetchData = (account) => {
   return async (dispatch) => {
     dispatch(fetchDataRequest());
     try {
@@ -34,10 +38,26 @@ export const fetchData = () => {
       //   .blockchain.smartContract.methods.cost()
       //   .call();
 
+      let publicSale = await store
+        .getState()
+        .blockchain.smartContract.methods.isPublicSaleOn()
+        .call();
+
+      let proof = getProof(account);
+
+      let mintedCount = await store
+        .getState()
+        .blockchain.smartContract.methods.numberMinted(account)
+        .call();
+
       dispatch(
         fetchDataSuccess({
           totalSupply,
-          // cost,
+          proof,
+          mintedCount,
+          publicSale,
+          whitelisted: publicSale ? true : proof.length > 0,
+          cost: publicSale ? PUBLIC_PRICE : PRESALE_PRICE,
         })
       );
     } catch (err) {
